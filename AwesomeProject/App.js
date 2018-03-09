@@ -22,7 +22,9 @@ Navigation.startSingleScreenApp({
 
   screen:{
     screen:"awesome-app.AuthScreen",
-    title : "Login"
+    navigatorStyle: {
+      navBarHidden: true
+    }
   }
 });
 
