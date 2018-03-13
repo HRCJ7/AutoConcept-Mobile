@@ -1,6 +1,11 @@
 package com.testapp;
 
+import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
 import com.facebook.react.ReactActivity;
 import com.reactnativenavigation.controllers.SplashActivity;
@@ -9,19 +14,14 @@ import org.devio.rn.splashscreen.SplashScreen;
 
 public class MainActivity extends SplashActivity {
 
-    /**
-     * Returns the name of the main component registered from JavaScript.
-     * This is used to schedule rendering of the component.
-     */
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        SplashScreen.show(this);  // here
-//        super.onCreate(savedInstanceState);
-//    }
-//
-//
-//    @Override
-//    protected String getMainComponentName() {
-//        return "TestApp";
-//    }
+    @Override
+    public LinearLayout createSplashLayout() {
+        LinearLayout view = new LinearLayout(this);
+
+
+        view.setBackground(getResources().getDrawable(R.drawable.splash));
+        view.setGravity(Gravity.CENTER);
+
+        return view;
+    }
 }

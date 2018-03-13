@@ -1,7 +1,8 @@
-import {Navigation} from 'react-native-navigation';
-import {Provider} from 'react-redux';
+import { Navigation } from 'react-native-navigation';
+import { Provider } from 'react-redux';
 
 import AuthScreen from './src/screens/Auth/Auth';
+import RegisterScreen from './src/screens/Auth/Register';
 import FindPlaceScreen from './src/screens/FindPlace/FindPlace';
 import SharePlaceScreen from './src/screens/SharePlace/SharePlace';
 import PlaceDetailsScreen from './src/components/PlaceDetail/PlaceDetail';
@@ -10,18 +11,18 @@ import configureStore from './src/store/configureStore';
 
 const store = configureStore();
 
-
-Navigation.registerComponent("awesome-app.AuthScreen",()=>AuthScreen,store,Provider);
-Navigation.registerComponent("awesome-app.PlaceDetailsScreen",()=>PlaceDetailsScreen);
-Navigation.registerComponent("awesome-app.FindPlaceScreen",()=>FindPlaceScreen,store,Provider);
-Navigation.registerComponent("awesome-app.SharePlaceScreen",()=>SharePlaceScreen,store,Provider);
+Navigation.registerComponent("awesome-app.RegisterScreen", () => RegisterScreen, store, Provider);
+Navigation.registerComponent("awesome-app.AuthScreen", () => AuthScreen, store, Provider);
+Navigation.registerComponent("awesome-app.PlaceDetailsScreen", () => PlaceDetailsScreen);
+Navigation.registerComponent("awesome-app.FindPlaceScreen", () => FindPlaceScreen, store, Provider);
+Navigation.registerComponent("awesome-app.SharePlaceScreen", () => SharePlaceScreen, store, Provider);
 
 //Start App
 
 Navigation.startSingleScreenApp({
 
-  screen:{
-    screen:"awesome-app.AuthScreen",
+  screen: {
+    screen: "awesome-app.AuthScreen",
     navigatorStyle: {
       navBarHidden: true
     }
