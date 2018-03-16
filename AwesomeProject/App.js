@@ -6,6 +6,8 @@ import RegisterScreen from './src/screens/Auth/Register';
 import FindPlaceScreen from './src/screens/FindPlace/FindPlace';
 import SharePlaceScreen from './src/screens/SharePlace/SharePlace';
 import PlaceDetailsScreen from './src/components/PlaceDetail/PlaceDetail';
+import MainScreen from './src/screens/Main/MainScreen';
+import Contatcs from './src/screens/Contatcs/Contacts'
 
 import configureStore from './src/store/configureStore';
 
@@ -16,6 +18,8 @@ Navigation.registerComponent("awesome-app.AuthScreen", () => AuthScreen, store, 
 Navigation.registerComponent("awesome-app.PlaceDetailsScreen", () => PlaceDetailsScreen);
 Navigation.registerComponent("awesome-app.FindPlaceScreen", () => FindPlaceScreen, store, Provider);
 Navigation.registerComponent("awesome-app.SharePlaceScreen", () => SharePlaceScreen, store, Provider);
+Navigation.registerComponent("awesome-app.MainScreen", () => MainScreen, store, Provider);
+Navigation.registerComponent("awesome-app.Contatcs", () => Contatcs, store, Provider);
 
 //Start App
 
@@ -26,6 +30,9 @@ Navigation.startSingleScreenApp({
     navigatorStyle: {
       navBarHidden: true
     }
+  },
+  appStyle: {
+    keepStyleAcrossPush: false
   }
 });
 

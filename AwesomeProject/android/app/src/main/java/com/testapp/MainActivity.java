@@ -19,7 +19,7 @@ public class MainActivity extends SplashActivity {
         LinearLayout view = new LinearLayout(this);
 
 
-        view.setBackground(getResources().getDrawable(R.drawable.splash));
+        view.setBackground(getResources().getDrawable(R.drawable.splash1));
         view.setGravity(Gravity.CENTER);
 
         return view;

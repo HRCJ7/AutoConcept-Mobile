@@ -7,10 +7,13 @@ const remote = 'https://s15.postimg.org/tw2qkvmcb/400px.png';
 
 class RegisterScreen extends Component {
 
-    createAccountdHandler = () => {
+    loginHandler = () => {
 
         this.props.navigator.push({
-            screen: "awesome-app.RegisterScreen"
+            screen: "awesome-app.AuthScreen",
+            navigatorStyle: {
+                navBarHidden: true
+            }
         });
     }
 
@@ -101,6 +104,7 @@ class RegisterScreen extends Component {
 
                     <TouchableHighlight
                         style={styles.signup}
+                        onPress={this.loginHandler}
                     >
                         <View style={styles.signup_view}>
                             <Text style={styles.signup_text}>

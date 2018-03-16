@@ -16,6 +16,15 @@ class AuthScreen extends Component {
       }
     });
   }
+  startMainScreenHandler = () => {
+
+    this.props.navigator.push({
+      screen: "awesome-app.MainScreen",
+      navigatorStyle: {
+        navBarHidden: true
+      }
+    });
+  }
 
   render() {
     const resizeMode = 'center';
@@ -89,6 +98,7 @@ class AuthScreen extends Component {
 
           <TouchableHighlight
             style={styles.signin}
+            onPress={this.startMainScreenHandler}
           >
             <View style={styles.signin_view}>
               <Text style={styles.signin_text}>
@@ -173,7 +183,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
-
   },
   signin_text: {
 
