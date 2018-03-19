@@ -19,6 +19,17 @@ class MainScreen extends Component {
 
         });
     }
+    profileHandler = () => {
+
+        this.props.navigator.push({
+            screen: "awesome-app.Profile",
+            navigatorStyle: {
+                navBarHidden: false
+            },
+            title: "Profile"
+
+        });
+    }
 
     render() {
 
@@ -109,7 +120,7 @@ class MainScreen extends Component {
                                 borderColor: 'white',
                                 backgroundColor: 'transparent',
                             }}>
-                            <MainViewButton placeImage={require('../../assets/profile.png')} placeName="Profile" />
+                            <MainViewButton action={this.profileHandler} placeImage={require('../../assets/profile.png')} placeName="Profile" />
                         </View>
                         <View
                             style={{

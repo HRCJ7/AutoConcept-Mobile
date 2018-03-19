@@ -7,7 +7,9 @@ import FindPlaceScreen from './src/screens/FindPlace/FindPlace';
 import SharePlaceScreen from './src/screens/SharePlace/SharePlace';
 import PlaceDetailsScreen from './src/components/PlaceDetail/PlaceDetail';
 import MainScreen from './src/screens/Main/MainScreen';
-import Contatcs from './src/screens/Contatcs/Contacts'
+import Contatcs from './src/screens/Contatcs/Contacts';
+import Profile from './src/screens/Profile/Profile';
+
 
 import configureStore from './src/store/configureStore';
 
@@ -20,6 +22,7 @@ Navigation.registerComponent("awesome-app.FindPlaceScreen", () => FindPlaceScree
 Navigation.registerComponent("awesome-app.SharePlaceScreen", () => SharePlaceScreen, store, Provider);
 Navigation.registerComponent("awesome-app.MainScreen", () => MainScreen, store, Provider);
 Navigation.registerComponent("awesome-app.Contatcs", () => Contatcs, store, Provider);
+Navigation.registerComponent("awesome-app.Profile", () => Profile, store, Provider);
 
 //Start App
 

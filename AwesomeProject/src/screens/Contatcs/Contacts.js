@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, Dimensions, Platform, Button, Image, TouchableHighlight, ImageBackground, StatusBar, TextInput, StyleSheet } from 'react-native';
-import MyStatusBar from '../../components/StatusBar/MyStatusBar'
+import MyStatusBar from '../../components/StatusBar/MyStatusBar';
+import ContactsFields from '../../components/ContactsFields/ContactsFields';
 
 
 var deviceWidth = Dimensions.get('window').width;
@@ -19,10 +20,7 @@ class Contacts extends Component {
         navBarBackgroundColor: 'transparent',
         navBarNoBorder: true,
 
-
-
         //iOS
-
 
         //Android
 
@@ -43,18 +41,24 @@ class Contacts extends Component {
             <View style={{ flex: 1 }}>
                 <MyStatusBar backgroundColor="#000000" barStyle="light-content" />
                 <ImageBackground
-                    style={{
-                        resizeMode: 'cover',
-                        backgroundColor: '#ccc',
-                        flex: 1,
-                        flexDirection: 'column',
-
-                        justifyContent: 'flex-start',
-                        alignItems: 'center'
-                    }}
+                    style={styles.backgroundStyle}
                     source={require('../../assets/signup_background.png')}
                 >
-
+                    <View
+                        style={[styles.contactText, { marginTop: '60%' }]}
+                    >
+                        <ContactsFields color='black' placeIcon="ios-home" placeName="Smörhålevägen 3, 434 42 Kungsbacka" />
+                    </View>
+                    <View
+                        style={styles.contactText}
+                    >
+                        <ContactsFields color='black' placeIcon="ios-at" placeName="info@autoconcept.se" />
+                    </View>
+                    <View
+                        style={styles.contactText}
+                    >
+                        <ContactsFields color='black' placeIcon="ios-call" placeName="+46 300 52 10 00" />
+                    </View>
                 </ImageBackground>
             </View >
         );
@@ -64,107 +68,25 @@ class Contacts extends Component {
 export default Contacts;
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-    },
 
-    titleText: {
-        fontSize: 20,
-        color: 'white',
-        fontWeight: 'bold'
+    contactText: {
 
-    },
-    ImageStyle: {
-
-        height: 50,
-        width: 50,
-        resizeMode: 'stretch',
-        alignItems: 'center'
-    },
-
-    dropdown_1: {
-        flex: 1,
-        justifyContent: 'center',
-        marginRight: 10
-
-    },
-    dropdown_2_text: {
-        marginVertical: 10,
-        marginHorizontal: 6,
-        fontSize: 18,
-        color: 'white',
-        textAlign: 'center',
-        textAlignVertical: 'center'
-    },
-    SectionStyle: {
-        marginTop: 15,
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#FFFFFF',
-        borderWidth: 1,
-        borderColor: '#979797',
-        height: 40,
-        borderRadius: 4,
-        width: '90%',
-        shadowOffset: { width: 0, height: 2 },
-        shadowOpacity: 0.8,
-        shadowRadius: 2,
-        elevation: 1
+        width: '80%',
+        height: deviceWidth * 0.1,
+        backgroundColor: 'transparent',
+        borderBottomWidth: 1,
+        borderColor: 'black'
     },
-    label: {
-        color: 'black'
-    },
-    CheckBox: {
-        height: 15,
-        width: 15,
-        borderColor: '#979797',
-        borderWidth: 1,
-        backgroundColor: '#D8D8D8'
+    backgroundStyle: {
+        resizeMode: 'cover',
+        backgroundColor: '#ccc',
+        flex: 1,
+        flexDirection: 'column',
 
-    },
-    main_button: {
-
-        height: '100%',
-        width: '100%',
-
-        backgroundColor: 'transparent'
-    },
-    signin_view: {
-
-        width: '100%',
-        justifyContent: 'center',
+        justifyContent: 'flex-start',
         alignItems: 'center'
-
-    },
-    signin_text: {
-
-        color: '#FFFFFF',
-        textAlign: 'center',
-        fontFamily: "Helvetica Neue",
-        fontSize: 18
-    },
-    forget_your_password: {
-        marginTop: 10,
-        height: 15,
-        width: '90%',
-        color: '#007191',
-        fontFamily: "Helvetica Neue",
-        fontSize: 14,
-        lineHeight: 14,
-        textAlign: 'left',
-        textDecorationLine: 'underline'
-    },
-    create_account: {
-        position: 'absolute',
-        bottom: 0,
-        justifyContent: 'center',
-        alignItems: 'center',
-        height: 43,
-        width: '100%',
-        opacity: 0.54,
-        backgroundColor: '#007191'
     }
 })
