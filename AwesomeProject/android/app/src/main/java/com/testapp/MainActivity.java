@@ -7,7 +7,6 @@ import android.view.Gravity;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.facebook.react.ReactActivity;
 import com.reactnativenavigation.controllers.SplashActivity;
 
 import org.devio.rn.splashscreen.SplashScreen;
@@ -17,8 +16,6 @@ public class MainActivity extends SplashActivity {
     @Override
     public LinearLayout createSplashLayout() {
         LinearLayout view = new LinearLayout(this);
-
-
         view.setBackground(getResources().getDrawable(R.drawable.splash1));
         view.setGravity(Gravity.CENTER);
 

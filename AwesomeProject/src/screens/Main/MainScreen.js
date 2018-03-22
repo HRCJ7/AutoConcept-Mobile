@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Dimensions, Platform, Button, Image, TouchableHighlight, ImageBackground, StatusBar, TextInput, StyleSheet } from 'react-native';
+import { View, Text, Dimensions, ScrollView, Platform, Button, Image, TouchableHighlight, ImageBackground, StatusBar, TextInput, StyleSheet } from 'react-native';
 import ModalDropdown from 'react-native-modal-dropdown';
 import MainViewButton from '../../components/MainViewButton/MainViewButton'
 import MyStatusBar from '../../components/StatusBar/MyStatusBar'
@@ -27,6 +27,17 @@ class MainScreen extends Component {
                 navBarHidden: false
             },
             title: "Profile"
+
+        });
+    }
+    claimsHandler = () => {
+
+        this.props.navigator.push({
+            screen: "awesome-app.Claims",
+            navigatorStyle: {
+                navBarHidden: false
+            },
+            title: "Claims"
 
         });
     }
@@ -68,6 +79,7 @@ class MainScreen extends Component {
                     }}
                     source={require('../../assets/main.png')}
                 >
+
                     <View
                         style={{
                             marginTop: '70%',
@@ -97,7 +109,7 @@ class MainScreen extends Component {
                                 height: '100%',
                                 backgroundColor: 'transparent',
                             }} >
-                            <MainViewButton placeImage={require('../../assets/list_items.png')} placeName="Claim List" />
+                            <MainViewButton action={this.claimsHandler} placeImage={require('../../assets/list_items.png')} placeName="Claim List" />
                         </View>
                     </View>
                     <View
@@ -131,8 +143,11 @@ class MainScreen extends Component {
                             <MainViewButton action={this.contactsHandler} placeImage={require('../../assets/contacts.png')} placeName="Contacts" />
                         </View>
                     </View>
+
                 </ImageBackground>
+
             </View >
+
         );
     }
 }

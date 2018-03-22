@@ -12,6 +12,8 @@ pod 'RNVectorIcons', :path => 'node_modules/react-native-vector-icons'
   target 'TestApp-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
+
   end
 
   target 'TestAppTests' do

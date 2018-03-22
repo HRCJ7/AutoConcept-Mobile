@@ -9,7 +9,9 @@ import PlaceDetailsScreen from './src/components/PlaceDetail/PlaceDetail';
 import MainScreen from './src/screens/Main/MainScreen';
 import Contatcs from './src/screens/Contatcs/Contacts';
 import Profile from './src/screens/Profile/Profile';
-
+import Claims from './src/screens/Claims/Claims';
+import RepairDescription from './src/screens/Repair Description/RepairDescription';
+import DamageDiagnosisReport from './src/screens/Damage Diagnosis Report/DamageDiagnosisReport';
 
 import configureStore from './src/store/configureStore';
 
@@ -23,7 +25,9 @@ Navigation.registerComponent("awesome-app.SharePlaceScreen", () => SharePlaceScr
 Navigation.registerComponent("awesome-app.MainScreen", () => MainScreen, store, Provider);
 Navigation.registerComponent("awesome-app.Contatcs", () => Contatcs, store, Provider);
 Navigation.registerComponent("awesome-app.Profile", () => Profile, store, Provider);
-
+Navigation.registerComponent("awesome-app.Claims", () => Claims, store, Provider);
+Navigation.registerComponent("awesome-app.DamageDiagnosisReport", () => DamageDiagnosisReport, store, Provider);
+Navigation.registerComponent("awesome-app.RepairDescription", () => RepairDescription, store, Provider);
 //Start App
 
 Navigation.startSingleScreenApp({

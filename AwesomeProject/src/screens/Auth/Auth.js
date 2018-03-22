@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, Button, Image, TouchableHighlight, ImageBackground, StatusBar, TextInput, StyleSheet } from 'react-native';
+import { View, Text, Button, ScrollView, Image, TouchableHighlight, ImageBackground, StatusBar, TextInput, StyleSheet } from 'react-native';
 import startTabs from '../MainTabs/startMainTabs';
 import CheckBox from 'react-native-checkbox';
 
@@ -36,19 +36,21 @@ class AuthScreen extends Component {
         style={{
           backgroundColor: '#ccc',
           flex: 1,
+
           flexDirection: 'column',
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          justifyContent: 'flex-start',
+          //  position: 'absolute',
+          //   width: '100%',
+          //  height: '100%',
+          justifyContent: 'center',
           alignItems: 'center'
         }}
         source={require('../../assets/signup_background.png')}
       >
+
         <View
           style={{
             width: '100%',
-            marginTop: 200,
+            marginTop: '25%',
             alignItems: 'center'
           }}
         >
@@ -124,7 +126,8 @@ class AuthScreen extends Component {
             </Text>
           </View>
         </TouchableHighlight>
-      </ImageBackground>
+
+      </ImageBackground >
       //  </View>
     );
   }
