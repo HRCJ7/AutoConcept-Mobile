@@ -3,8 +3,10 @@ import { View, Text, ScrollView, AlertIOS, Dimensions, Platform, Button, Image, 
 import MyStatusBar from '../../components/StatusBar/MyStatusBar';
 import DynamicList from '../../components/DynamicList/DynamicList';
 import TextFields from '../../components/TextFields/TextFields';
-import Panel from '../../components/Panel/Panel';
+import ExpandableList from '../../components/ExpandableList/ExpandableList';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Panel from '../../components/Panel/SummaryPanel';
+import SummaryPanel from '../../components/Panel/SummaryPanel';
 
 
 var deviceWidth = Dimensions.get('window').width;
@@ -103,17 +105,32 @@ class RepairDescription extends Component {
                         source={require('../../assets/profileBG.png')}
                     >
                         <ScrollView style={styles.container}>
-                            <Panel title="A Panel with short content text">
-                                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Text>
-                            </Panel>
-                            <Panel title="A Panel with long content text">
-                                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</Text>
-                            </Panel>
-                            <Panel title="Another Panel">
-                                <Text>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.</Text>
-                            </Panel>
+                            <ExpandableList />
                         </ScrollView>
+
                     </ImageBackground>
+                    <View style={styles.summery_container} >
+                        <SummaryPanel title="Summary">
+                            <View style={{
+                                flexDirection: 'row'
+                            }} >
+                                <Text style={{ flex: 1, textAlign: 'center', fontSize: 18 }}>300 kr</Text>
+                                <Text style={{ flex: 1, textAlign: 'center', fontSize: 18 }}>300 kr</Text>
+                                <Text style={{ flex: 1, textAlign: 'center', fontSize: 18 }}>300 kr</Text>
+                            </View>
+                            <View style={{
+                                marginTop: '2%',
+                                flexDirection: 'row'
+                            }} >
+                                <Text style={{ flex: 1, textAlign: 'center' }}>Sum Work</Text>
+                                <Text style={{ flex: 1, textAlign: 'center' }}>Sum Components</Text>
+                                <Text style={{ flex: 1, textAlign: 'center' }}>Sum Parts</Text>
+                            </View>
+                            <View style={{ justifyContent: 'flex-start' }}>
+                                <Text style={{ marginTop: '5%', textAlign: 'right', marginRight: '10%', fontWeight: "bold", fontSize: 25 }}>Total</Text>
+                            </View>
+                        </SummaryPanel>
+                    </View>
                 </View >
 
             );
@@ -143,7 +160,7 @@ const styles = StyleSheet.create({
     backgroundStyle: {
         resizeMode: 'cover',
         backgroundColor: '#ccc',
-        flex: 1,
+        flex: 6,
         flexDirection: 'column',
 
         justifyContent: 'flex-start',
@@ -204,8 +221,15 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
+        width: '90%',
         backgroundColor: '#f4f7f9',
-        paddingTop: 30
+        marginTop: '25%',
+        marginBottom: '10%'
+    },
+    summery_container: {
+        flex: 2,
+        width: '100%',
+        backgroundColor: '#f4f7f9',
     },
 
 

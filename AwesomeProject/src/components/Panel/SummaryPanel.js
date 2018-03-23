@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import { StyleSheet, Text, Dimensions, View, Image, TouchableHighlight, Animated } from 'react-native';
 
-const expandable_component_height = Dimensions.get('window').height * 0.05;
+const expandable_component_height = Dimensions.get('window').height * 0.06;
 
-class Panel extends Component {
+class SummaryPanel extends Component {
 
     constructor(props) {
         super(props);
@@ -39,7 +39,7 @@ class Panel extends Component {
 
     _setMaxHeight(event) {
         this.setState({
-            maxHeight: event.nativeEvent.layout.height
+            maxHeight: Dimensions.get('window').height * 0.2
         });
     }
 
@@ -87,9 +87,8 @@ var styles = StyleSheet.create({
         backgroundColor: '#fff',
         borderWidth: 1,
         borderColor: '#979797',
-        height: '10%',
-        borderRadius: 4,
-        margin: 10,
+        height: '25%',
+
         overflow: 'hidden'
     },
     titleContainer: {
@@ -98,6 +97,8 @@ var styles = StyleSheet.create({
     title: {
         flex: 1,
         padding: 10,
+        textAlign: 'center',
+        fontSize: 25,
         color: '#2a2f43',
         fontWeight: 'bold'
     },
@@ -114,4 +115,4 @@ var styles = StyleSheet.create({
     }
 });
 
-export default Panel;
+export default SummaryPanel;

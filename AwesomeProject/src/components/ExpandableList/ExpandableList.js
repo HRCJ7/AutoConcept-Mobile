@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Container, Header, Button, Content, List, ListItem, Left, Right, Text, View } from 'native-base';
+import Panel from '../../components/Panel/Panel';
 
-export default class DynamicList extends Component {
+export default class ExpandableList extends Component {
 
 
     render() {
@@ -9,24 +10,16 @@ export default class DynamicList extends Component {
 
         return (
 
-            <Container >
+            <Container style={{ marginTop: '5%' }} >
                 <Content >
                     <List
 
                         dataArray={items}
                         renderRow={(item) =>
-                            <ListItem onPress={this.props.action}>
-                                <Left>
-
+                            <ListItem onPress={this.props.action} style={{ width: '90%' }}>
+                                <Panel title="A Panel with short content text">
                                     <Text>{item}</Text>
-                                </Left>
-                                <Right>
-                                    <Button rounded small style={{ backgroundColor: 'black' }} r>
-                                        <Text>Light</Text>
-                                    </Button>
-
-                                </Right>
-
+                                </Panel>
                             </ListItem>
                         }>
                     </List>
